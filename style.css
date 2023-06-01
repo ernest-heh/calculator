@@ -13,26 +13,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+  padding: 0;
   margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
 }
 
 /* Set core root defaults */
@@ -43,8 +25,6 @@ html:focus-within {
 /* Set core body defaults */
 body {
   font-family: "Satoshi", sans-serif;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
   background-color: var(--yellow);
 }
 
@@ -54,18 +34,6 @@ h3,
 h4 {
   font-family: "Clash Grotesk", sans-serif;
   font-weight: 550;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -93,20 +61,51 @@ select {
 }
 
 .container {
-  width: 350px;
-  margin: 0 auto;
-  height: 100lvh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100lvh;
   padding: 0 2rem;
 }
 
+.calc-screen {
+  font-family: "JetBrains Mono", sans-serif;
+  /* font-family: "Clash Grotesk", sans-serif; */
+  font-weight: 200;
+  background-color: var(--green);
+  border-radius: 1rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 2rem;
+  aspect-ratio: 4 / 1;
+  grid-column: span 4;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.calc-screen > h1 {
+  font-family: "Satoshi", sans-serif;
+  position: absolute;
+  font-size: 1rem;
+  top: -40%;
+  left: 4%;
+}
+
+.digits {
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 .calculator {
+  width: 350px;
   display: grid;
   gap: 2%;
-  width: 100%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     ". . . ."
@@ -116,6 +115,26 @@ select {
     "one two three plus"
     "zero zero decimal equal";
   margin-bottom: 3rem;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  border: none;
+  background-color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  aspect-ratio: 1/1;
+  border-radius: 100rem;
+  /* transition: background-color 150ms; */
+}
+
+.btn:active {
+  background-color: var(--lightgray);
 }
 
 .one {
@@ -154,68 +173,14 @@ select {
   grid-area: nine;
 }
 
-.zero {
-  grid-area: zero;
-}
-
 .decimal {
   grid-area: decimal;
 }
 
-.calc-screen {
-  font-family: "JetBrains Mono", sans-serif;
-  /* font-family: "Clash Grotesk", sans-serif; */
-  font-weight: 200;
-  background-color: var(--green);
-  border-radius: 1rem;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  text-align: right;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  font-size: 2rem;
-  aspect-ratio: 4 / 1;
-  grid-column: span 4;
-  position: relative;
-  margin-bottom: 0.5rem;
-}
-
-.calc-screen > h1 {
-  font-family: "Satoshi", sans-serif;
-  position: absolute;
-  font-size: 1rem;
-  top: -40%;
-  left: 4%;
-}
-
-.digits {
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-a,
-button {
-  text-decoration: none;
-  color: inherit;
-}
-
-.btn {
-  border: none;
-  background-color: white;
-  font-size: 1.5rem;
-  font-weight: 400;
-  aspect-ratio: 1/1;
-  border-radius: 100rem;
-  /* transition: background-color 150ms; */
-}
-
-.btn:active {
-  background-color: var(--lightgray);
-}
-
 .zero {
+  grid-area: zero;
   aspect-ratio: 2 / 1;
+  grid-column: span 2;
 }
 
 .btn-color {
