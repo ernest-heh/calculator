@@ -114,13 +114,17 @@ select {
     "four five six minus"
     "one two three plus"
     "zero zero decimal equal";
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 a,
 button {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  touch-action: manipulation;
 }
 
 .btn {
