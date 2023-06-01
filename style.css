@@ -177,7 +177,7 @@ select {
   grid-column: span 4;
 }
 
-.button {
+.btn {
   border: none;
   background-color: white;
   font-size: 2.5rem;
@@ -186,12 +186,11 @@ select {
   border-radius: 100rem;
 }
 
-#button-zero {
-  grid-column: span 2;
+.zero {
   aspect-ratio: 0;
 }
 
-.button-color {
+.btn-color {
   border: none;
   background-color: var(--orange);
   font-size: 3rem;
