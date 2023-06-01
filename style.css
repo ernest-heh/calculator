@@ -99,7 +99,7 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0 2rem;
 }
 
 .calculator {
@@ -124,9 +124,6 @@ select {
   grid-column: span 4;
 }
 
-.calc-keys {
-}
-
 .button {
   border: none;
   background-color: white;
@@ -141,8 +138,12 @@ select {
   aspect-ratio: 0;
 }
 
-#button-color {
-  background: var(--orange);
+.button-color {
+  border: none;
+  background-color: var(--orange);
   font-size: 3rem;
+  font-weight: 300;
   color: white;
+  aspect-ratio: 1/1;
+  border-radius: 100rem;
 }
