@@ -1,7 +1,9 @@
-@import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@1&f[]=satoshi@1&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@1&f[]=satoshi@1&f[]=jet-brains-mono@1&display=swap");
 
 :root {
-  --yellow: #ffee8f;
+  --yellow: rgb(233, 229, 206);
+  --green: rgb(104, 116, 104);
+  --orange: #ff8e4d;
 }
 
 /* Box sizing rules */
@@ -87,4 +89,60 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2%;
+  width: 100%;
+}
+
+.calc-screen {
+  font-family: "JetBrains Mono", sans-serif;
+  background-color: var(--green);
+  border-radius: 1rem;
+  width: 100%;
+  padding: 1rem;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  font-size: 3rem;
+  aspect-ratio: 4 / 1;
+  grid-column: span 4;
+}
+
+.calc-keys {
+}
+
+.button {
+  border: none;
+  background-color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+  aspect-ratio: 1/1;
+  border-radius: 100rem;
+}
+
+#button-zero {
+  grid-column: span 2;
+  aspect-ratio: 0;
+}
+
+#button-color {
+  background: var(--orange);
+  font-size: 3rem;
+  color: white;
 }
