@@ -3,23 +3,13 @@ const display = calculator.querySelector(".calc-screen");
 // const keys = document.querySelector(".calculator");
 const keys = calculator.querySelectorAll("button");
 
+// let num1 = 0;
+// let num2 = 0;
+// let operator;
+
 const clearScreen = () => {
   display.textContent = "0";
 };
-
-// keys.addEventListener("click", (e) => {
-//   if (!e.target.closest("button")) return;
-
-//   const key = e.target;
-//   const keyValue = key.textContent;
-//   const displayValue = display.textContent;
-
-//   if (displayValue === "0") {
-//     display.textContent = keyValue;
-//   } else {
-//     display.textContent = displayValue + keyValue;
-//   }
-// });
 
 keys.forEach((key) => {
   key.addEventListener("click", () => {
@@ -39,15 +29,37 @@ keys.forEach((key) => {
     }
 
     if (type === "operator") {
-      console.log(key);
+      const operatorKeys = calculator.querySelectorAll(
+        '[data-type="operator"]'
+      );
+      operatorKeys.forEach((el) => (el.dataset.state = ""));
+      key.dataset.state = "selected";
+
+      calculator.dataset.firstNum = displayValue;
+      calculator.dataset.operator = key.dataset.key;
     }
 
     if (type === "equal") {
+      const firstNum = calculator.dataset.firstNum;
+      const operator = calculator.dataset.operator;
+      const secondNum = displayValue;
+
+      display.textContent = calculate(firstNum, secondNum, operator);
+      key.dataset.state = "";
     }
 
     calculator.dataset.previousKeyType = type;
   });
 });
+
+const calculate = (a, b, operand) => {
+  a = parseInt(a);
+  b = parseInt(b);
+  if (operand === "plus") return a + b;
+  if (operand === "minus") return a - b;
+  if (operand === "times") return a * b;
+  if (operand === "divide") return a / b;
+};
 
 window.addEventListener("keyup", handleKeyboardInput);
 
@@ -59,39 +71,4 @@ const handleKeyboardInput = (e) => {
   if (e.key === "Escape") clearScreen();
   if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/")
     setOperation(convertOperator(e.key));
-};
-
-const add = (a, b) => {
-  return a + b;
-};
-
-const subtract = (a, b) => {
-  return a - b;
-};
-
-const multiply = (a, b) => {
-  return a * b;
-};
-
-const divide = (a, b) => {
-  return a / b;
-};
-
-let num1 = 0;
-let num2 = 0;
-let operator;
-
-const operate = (a, b, operand) => {
-  switch (operand) {
-    case "+":
-      return a + b;
-    case "-":
-      return a - b;
-    case "*":
-      return a * b;
-    case "/":
-      return a / b;
-    default:
-      return 0;
-  }
 };

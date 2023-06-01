@@ -209,3 +209,7 @@ select {
 .btn-color:active {
   background-color: var(--orangedark);
 }
+
+[data-state="selected"] {
+  background-color: var(--orangedark);
+}
