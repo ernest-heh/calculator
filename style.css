@@ -94,7 +94,7 @@ select {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
   height: 100svh;
   display: flex;
@@ -116,6 +116,7 @@ select {
     "four five six minus"
     "one two three plus"
     "zero zero decimal equal";
+  margin-bottom: 3rem;
 }
 
 .one {
@@ -169,7 +170,7 @@ select {
   background-color: var(--green);
   border-radius: 1rem;
   width: 100%;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   text-align: right;
   display: flex;
   justify-content: end;
@@ -187,7 +188,7 @@ select {
 .btn {
   border: none;
   background-color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   aspect-ratio: 1/1;
   border-radius: 100rem;
@@ -204,8 +205,8 @@ select {
 .btn-color {
   border: none;
   background-color: var(--orange);
-  font-size: 3rem;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 400;
   color: white;
   aspect-ratio: 1/1;
   border-radius: 100rem;
