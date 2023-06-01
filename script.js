@@ -4,6 +4,8 @@ const keys = calculator.querySelectorAll("button");
 
 const clearScreen = () => {
   display.textContent = "0";
+  delete calculator.dataset.firstNum;
+  delete calculator.dataset.operator;
 };
 
 keys.forEach((key) => {

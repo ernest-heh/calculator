@@ -179,6 +179,7 @@ select {
   aspect-ratio: 4 / 1;
   grid-column: span 4;
   position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .calc-screen > h1 {
