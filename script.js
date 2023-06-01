@@ -1,6 +1,10 @@
 const calculator = document.querySelector(".calculator");
 const display = calculator.querySelector(".digits");
+// const displayValue = display.textContent;
+// const { previousKeyType } = calculator.dataset;
 const keys = calculator.querySelectorAll("button");
+// const keyNumbers = calculator.querySelectorAll('[data-type="number"]');
+// const keyOperators = calculator.querySelectorAll('[data-type="operator"]');
 
 const clearScreen = () => {
   display.textContent = "0";

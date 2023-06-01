@@ -43,7 +43,6 @@ html:focus-within {
 /* Set core body defaults */
 body {
   font-family: "Satoshi", sans-serif;
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--yellow);
@@ -96,7 +95,7 @@ select {
 .container {
   width: 350px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100lvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +215,7 @@ button {
 }
 
 .zero {
-  aspect-ratio: 0;
+  aspect-ratio: 2 / 1;
 }
 
 .btn-color {
