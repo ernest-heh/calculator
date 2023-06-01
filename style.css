@@ -125,6 +125,8 @@ button {
 
 button {
   touch-action: manipulation;
+  aspect-ratio: 1 / 1;
+  grid-column: span 1;
 }
 
 .btn {
@@ -132,7 +134,7 @@ button {
   background-color: white;
   font-size: 1.5rem;
   font-weight: 400;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   border-radius: 100rem;
   transition: background-color 150ms;
 }
@@ -193,7 +195,7 @@ button {
   font-size: 2rem;
   font-weight: 400;
   color: white;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   border-radius: 100rem;
   transition: background-color 150ms;
 }
