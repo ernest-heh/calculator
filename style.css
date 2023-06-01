@@ -94,7 +94,7 @@ select {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
   height: 100svh;
   display: flex;
@@ -186,13 +186,18 @@ select {
   font-family: "Satoshi", sans-serif;
   position: absolute;
   font-size: 1rem;
-  top: -34%;
+  top: -40%;
   left: 4%;
 }
 
 .digits {
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .btn {
