@@ -64,7 +64,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75svh;
+  min-height: 100svh;
   padding: 0 2rem;
 }
 
