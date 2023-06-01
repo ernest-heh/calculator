@@ -1,6 +1,7 @@
 const calculatorScreen = document.querySelector(".calc-screen");
+let screenValue = 21470.21;
 
-calculatorScreen.textContent = 12312.2133;
+calculatorScreen.textContent = screenValue;
 
 const clearScreen = () => {
   calculatorScreen.textContent = "";
