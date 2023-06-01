@@ -1,11 +1,6 @@
 const calculator = document.querySelector(".calculator");
 const display = calculator.querySelector(".digits");
-// const keys = document.querySelector(".calculator");
 const keys = calculator.querySelectorAll("button");
-
-// let num1 = 0;
-// let num2 = 0;
-// let operator;
 
 const clearScreen = () => {
   display.textContent = "0";
@@ -42,7 +37,20 @@ keys.forEach((key) => {
       const operator = calculator.dataset.operator;
       const secondNum = displayValue;
 
+      const operatorKeys = calculator.querySelectorAll(
+        '[data-type="operator"]'
+      );
+      operatorKeys.forEach((el) => (el.dataset.state = ""));
+
       display.textContent = calculate(firstNum, secondNum, operator);
+    }
+
+    if (type === "delete") {
+      display.textContent = displayValue.substring(0, displayValue.length - 1);
+    }
+
+    if (type === "clear") {
+      clearScreen();
     }
 
     calculator.dataset.previousKeyType = type;
