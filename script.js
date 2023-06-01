@@ -1,5 +1,5 @@
 const calculator = document.querySelector(".calculator");
-const display = calculator.querySelector(".calc-screen");
+const display = calculator.querySelector(".digits");
 // const keys = document.querySelector(".calculator");
 const keys = calculator.querySelectorAll("button");
 
@@ -19,9 +19,7 @@ keys.forEach((key) => {
     const { previousKeyType } = calculator.dataset;
 
     if (type === "number") {
-      if (displayValue === "0") {
-        display.textContent = keyValue;
-      } else if (previousKeyType === "operator") {
+      if (displayValue === "0" || previousKeyType === "operator") {
         display.textContent = keyValue;
       } else {
         display.textContent = displayValue + keyValue;
@@ -45,7 +43,6 @@ keys.forEach((key) => {
       const secondNum = displayValue;
 
       display.textContent = calculate(firstNum, secondNum, operator);
-      key.dataset.state = "";
     }
 
     calculator.dataset.previousKeyType = type;
