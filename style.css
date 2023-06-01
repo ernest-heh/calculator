@@ -4,6 +4,8 @@
   --yellow: rgb(233, 229, 206);
   --green: rgb(104, 116, 104);
   --orange: #ff8e4d;
+  --orangedark: #dc6f30;
+  --lightgray: rgb(245, 245, 245);
 }
 
 /* Box sizing rules */
@@ -186,6 +188,10 @@ select {
   border-radius: 100rem;
 }
 
+.btn:active {
+  background-color: var(--lightgray);
+}
+
 .zero {
   aspect-ratio: 0;
 }
@@ -198,4 +204,8 @@ select {
   color: white;
   aspect-ratio: 1/1;
   border-radius: 100rem;
+}
+
+.btn-color:active {
+  background-color: var(--orangedark);
 }
