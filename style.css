@@ -94,9 +94,9 @@ select {
 }
 
 .container {
-  max-width: 350px;
+  width: 350px;
   margin: 0 auto;
-  height: 100svh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,7 +175,7 @@ select {
   display: flex;
   justify-content: end;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   aspect-ratio: 4 / 1;
   grid-column: span 4;
   position: relative;
@@ -195,7 +195,8 @@ select {
   overflow: hidden;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: inherit;
 }
@@ -207,7 +208,7 @@ a {
   font-weight: 400;
   aspect-ratio: 1/1;
   border-radius: 100rem;
-  transition: background-color 150ms;
+  /* transition: background-color 150ms; */
 }
 
 .btn:active {
@@ -226,7 +227,7 @@ a {
   color: white;
   aspect-ratio: 1/1;
   border-radius: 100rem;
-  transition: background-color 150ms;
+  /* transition: background-color 150ms; */
 }
 
 .btn-color:active {
