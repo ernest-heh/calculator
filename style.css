@@ -134,7 +134,7 @@ button {
   font-weight: 400;
   aspect-ratio: 1/1;
   border-radius: 100rem;
-  /* transition: background-color 150ms; */
+  transition: background-color 150ms;
 }
 
 .btn:active {
@@ -195,7 +195,7 @@ button {
   color: white;
   aspect-ratio: 1/1;
   border-radius: 100rem;
-  /* transition: background-color 150ms; */
+  transition: background-color 150ms;
 }
 
 .btn-color:active {

@@ -1,11 +1,13 @@
 const calculator = document.querySelector(".calculator");
 const display = calculator.querySelector(".digits");
 const keys = calculator.querySelectorAll("button");
+const operatorKeys = calculator.querySelectorAll('[data-type="operator"]');
 
 const clearScreen = () => {
   display.textContent = "0";
   delete calculator.dataset.firstNum;
   delete calculator.dataset.operator;
+  operatorKeys.forEach((el) => (el.dataset.state = ""));
 };
 
 keys.forEach((key) => {
@@ -24,9 +26,9 @@ keys.forEach((key) => {
     }
 
     if (type === "operator") {
-      const operatorKeys = calculator.querySelectorAll(
-        '[data-type="operator"]'
-      );
+      // const operatorKeys = calculator.querySelectorAll(
+      //   '[data-type="operator"]'
+      // );
       operatorKeys.forEach((el) => (el.dataset.state = ""));
       key.dataset.state = "selected";
 
@@ -39,9 +41,9 @@ keys.forEach((key) => {
       const operator = calculator.dataset.operator;
       const secondNum = displayValue;
 
-      const operatorKeys = calculator.querySelectorAll(
-        '[data-type="operator"]'
-      );
+      // const operatorKeys = calculator.querySelectorAll(
+      //   '[data-type="operator"]'
+      // );
       operatorKeys.forEach((el) => (el.dataset.state = ""));
 
       display.textContent = calculate(firstNum, secondNum, operator);
